@@ -5,6 +5,9 @@ import requests
 
 app = Flask(__name__)
 
+@app.route("/",methods=['GET'])
+def reply():
+    return "Hello World"
 
 @app.route("/sms",methods=['GET','POST'])
 def sms_reply():

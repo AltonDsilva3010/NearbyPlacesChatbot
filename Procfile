@@ -1,1 +1,1 @@
-web: gunicorn app:send_sms
+web: gunicorn app:app
