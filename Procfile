@@ -1,0 +1,1 @@
+web: gunicorn app:send_sms
