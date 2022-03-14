@@ -18,9 +18,9 @@ def sms_reply():
     msg = resp.message()
 
     if incoming_msg[0] == '(':
-        msg.body(incoming_msg[1::])
+        msg.body(incoming_msg[1:len(incoming_msg) - 1])
      
-    if incoming_msg is 'service':
+    if 'service' in incoming_msg:
         msg.body('Enter in the format "(type,location,radius)"')
     
     if 'hello' in incoming_msg:
