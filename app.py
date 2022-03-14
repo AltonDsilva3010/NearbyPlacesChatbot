@@ -17,11 +17,13 @@ def sms_reply():
 
     msg = resp.message()
 
+    if 'hello' in incoming_msg:
+        msg.body("Great Success!")  
+
     if 'hi' in incoming_msg:
         msg.body("Hello i am a bot created today")
 
-    if 'hello' in incoming_msg:
-        msg.body("Great Success!")    
+      
 
     return str(resp)
 
