@@ -20,7 +20,7 @@ def sms_reply():
     if 'service' in incoming_msg:
         msg.body("Great Success!")  
 
-    if 'services' in incoming_msg:
+    if 'hello' in incoming_msg:
         msg.body("Hello i am a bot created today")
 
       
