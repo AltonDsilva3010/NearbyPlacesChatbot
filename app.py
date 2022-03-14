@@ -13,16 +13,18 @@ def reply():
 def sms_reply():
     incoming_msg = request.values.get('Body', '').lower()
 
-    resp = MessagingResponse()
+    resp = MessagingResponse() #twilio library
 
     msg = resp.message()
 
-    if incoming_msg:
-        msg.body(incoming_msg)
-
-
+    if incoming_msg[0] == '(':
+        msg.body(incoming_msg[1::])
+     
+    if incoming_msg is 'service':
+        msg.body('Enter in the format "(type,location,radius)"')
+    
     if 'hello' in incoming_msg:
-        msg.body("Hello i am a bot created today")
+        msg.body("Hello, this is the NearBy Places Bot \n Type 'service' to get places ")
 
       
 
