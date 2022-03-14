@@ -17,8 +17,9 @@ def sms_reply():
 
     msg = resp.message()
 
-    if 'service' in incoming_msg:
-        msg.body("Great Success!")  
+    if incoming_msg:
+        msg.body(incoming_msg)
+
 
     if 'hello' in incoming_msg:
         msg.body("Hello i am a bot created today")
