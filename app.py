@@ -82,7 +82,16 @@ def sms_reply():
         radius = stringlist[1]
         location = stringlist[2]     
         lat_lng = extract_lat_lng(location)
-        msg.body(extract_details(lat_lng,category,radius))
+        res = extract_details(lat_lng,category,radius)
+        outputstring = ""
+        name = list(res.keys())
+        address = list(res.values())
+        try:
+            for i in range(0,10):
+                outputstring = outputstring + "Name: " + name[i] + "\nAddress: " + address[i] + "\n\n"
+        except: 
+            pass
+        msg.body(outputstring)
      
     if 'service' in incoming_msg:
         msg.body('Enter in the format "(type,radius,location)"')
